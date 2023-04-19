@@ -11,7 +11,6 @@ const resolvers = {
       const user = _.find(UserList, { id: Number(id) });
       return user;
     },
-
     //Movie resolvers
     movies: () => {
       return MovieList;
@@ -20,6 +19,24 @@ const resolvers = {
       const movieName = args.name;
       const findMovie = _.find(MovieList, { name: movieName });
       return findMovie;
+    },
+  },
+
+  Mutation: {
+    createUser: (parents, args) => {
+      const user = args.input;
+      const lastId = UserList[UserList.length - 1];
+      user.id = lastId + 1;
+      console.log(user);
+    },
+
+    updateUserName: (parents, args) => {
+      const { id, newUserName } = args.input;
+      UserList.forEach((user) => {
+        if (user.id === id) {
+          user.userName = newUserName;
+        }
+      });
     },
   },
 };
