@@ -11,6 +11,7 @@ const resolvers = {
       const user = _.find(UserList, { id: Number(id) });
       return user;
     },
+    
     //Movie resolvers
     movies: () => {
       return MovieList;
