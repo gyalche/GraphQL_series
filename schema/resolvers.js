@@ -11,7 +11,7 @@ const resolvers = {
       const user = _.find(UserList, { id: Number(id) });
       return user;
     },
-    
+
     //Movie resolvers
     movies: () => {
       return MovieList;
@@ -35,7 +35,7 @@ const resolvers = {
       const { id, newUserName } = args.input;
       UserList.forEach((user) => {
         if (user.id === id) {
-          user.userName = newUserName;
+          user?.userName = newUserName;
         }
       });
     },
