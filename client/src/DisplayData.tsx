@@ -13,6 +13,14 @@ const QUERY_ALL_USERS = gql`
     }
 `;
 
+// query user{
+//   ...GetAgeAndName
+// }
+
+// fragment GetAgeAndName on User{
+
+//   name, age
+// }
 const QUERY_ALL_MOVIES = gql`
   query GetAllMovies {
     name
